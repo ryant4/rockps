@@ -20,11 +20,11 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection === "scissors" && computerSelection === "paper")
         return "Scissors beats paper! You win!";
     else if (playerSelection === "rock" && computerSelection === "paper")
-        return "Rock beats paper! You lose!";
-    else if (playerSelection === "paper" && computerSelection === "scissors")
         return "Paper beats rock! You lose!";
+    else if (playerSelection === "paper" && computerSelection === "scissors")
+        return "Scissors beats paper! You lose!";
     else if (playerSelection === "scissors" && computerSelection === "rock")
-        return "Scissors beats paper! You win!";
+        return "Rock beats scissors! You lose!";
     else {
         console.log("You didn't choose rock, paper, or scissors");
         return undefined;
@@ -36,11 +36,10 @@ function game() {
     playerSelection = playerSelection.toLowerCase();
     const computerSelection = getComputerChoice();
     console.log(playRound(playerSelection, computerSelection));
-
 }   
 
 for (let i=0; i < 5; i++) {
 
     game();
-    
+
 }
