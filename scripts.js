@@ -38,7 +38,8 @@ function playRound(playerSelection, computerSelection) {
         computerScore++;
     }
     else {
-        console.log("You didn't choose rock, paper, or scissors");
+        console.log("You didn't choose rock, paper, or scissors. Computer gets a point!");
+        computerScore++;
     }
   }
 
@@ -59,3 +60,9 @@ for (let i=0; i < 5; i++) {
 
 }
 
+if (playerScore === computerScore)
+    console.log("After all 5 rounds you tied!");
+else if (playerScore > computerScore)
+    console.log("After all 5 rounds you came out ahead!!");
+else
+    console.log("After all 5 rounds, the computer outdid you. SORRY!");
