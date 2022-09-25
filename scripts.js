@@ -10,12 +10,22 @@ function getComputerChoice(){
 }
 
 
-
-
-
-
 function playRound(playerSelection, computerSelection) {
-    // your code here!
+    if (playerSelection === computerSelection)
+        console.log("It's a tie!");
+    else if (playerSelection === "rock" && computerSelection === "scissors")
+        console.log("Rock beats scissors! You win!");
+    else if (playerSelection === "paper" && computerSelection === "rock")
+        console.log("Paper beats rock! You win!");
+    else if (playerSelection === "scissors" && computerSelection === "paper")
+        console.log("Scissors beats paper! You win!");
+    else if (playerSelection === "rock" && computerSelection === "paper")
+        console.log("Rock beats paper! You lose!");
+    else if (playerSelection === "paper" && computerSelection === "scissors")
+        console.log("Paper beats rock! You lose!");
+    else if (playerSelection === "scissors" && computerSelection === "rock")
+        console.log("Scissors beats paper! You win!");
+
   }
    
   const playerSelection = "rock";
