@@ -50,19 +50,37 @@ function game() {
     playRound(playerSelection, computerSelection);
 }   
 
+
+
 let playerScore = 0;
 let computerScore = 0;
 
-for (let i=0; i < 5; i++) {
+// for (let i=0; i < 5; i++) {
 
-    game();
-    console.log(`Score:  You: ${playerScore}  Computer: ${computerScore}`);
+//     game();
+//     console.log(`Score:  You: ${playerScore}  Computer: ${computerScore}`);
 
-}
+// }
 
-if (playerScore === computerScore)
-    console.log("After all 5 rounds you tied!");
-else if (playerScore > computerScore)
-    console.log("After all 5 rounds you came out ahead!!");
-else
-    console.log("After all 5 rounds, the computer outdid you. SORRY!");
+// if (playerScore === computerScore)
+//     console.log("After all 5 rounds you tied!");
+// else if (playerScore > computerScore)
+//     console.log("After all 5 rounds you came out ahead!!");
+// else
+//     console.log("After all 5 rounds, the computer outdid you. SORRY!");
+
+
+const rockbtn = document.querySelector('#rock-btn');
+const paperbtn = document.querySelector('#paper-btn');
+const scissorsbtn = document.querySelector('#scissors-btn');
+
+
+rockbtn.addEventListener('click', function(){
+    console.log("rock");
+})
+paperbtn.addEventListener('click', function(){
+    console.log("paper");
+})
+scissorsbtn.addEventListener('click', function(){
+    console.log("scissors");
+})
