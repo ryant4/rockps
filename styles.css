@@ -1,0 +1,34 @@
+
+h1 {
+    color:blue;
+    
+}
+
+button {
+    width: 200px;
+    height: 70px;
+    background-color: red;
+    color: black;
+    font-size: 20px;
+}
+
+button:hover{
+    background-color: azure;
+}
+
+.gameon {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+#results {
+    font-size: large;
+    
+}
+
+#lastgameresult {
+    margin-top: 35px;
+    font-size: large;
+}
