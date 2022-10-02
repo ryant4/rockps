@@ -14,34 +14,31 @@ function playRound(playerSelection, computerSelection) {
 
     const lastGameResult = document.querySelector("#lastgameresult");
 
-    if (playerSelection === computerSelection)
-        lastGameResult.innerHTML = ("It's a tie!");
+    if (playerSelection === computerSelection) {
+        lastGameResult.innerHTML = (`You played ${playerSelection} and computer played ${computerSelection}! It's a tie!`);
+    }
     else if (playerSelection === "rock" && computerSelection === "scissors"){
-        lastGameResult.innerHTML = ("Rock beats scissors! You win!");
+        lastGameResult.innerHTML = (`You played ${playerSelection} and computer played ${computerSelection}! You win!`);
         playerScore++;
     }
     else if (playerSelection === "paper" && computerSelection === "rock"){
-        lastGameResult.innerHTML = ("Paper beats rock! You win!");
+        lastGameResult.innerHTML = ("You played paper and computer played rock! You win!");
         playerScore++;
     }
     else if (playerSelection === "scissors" && computerSelection === "paper"){
-        lastGameResult.innerHTML = ("Scissors beats paper! You win!");
+        lastGameResult.innerHTML = ("You played scissors and computer played paper! You win!");
         playerScore++;
     }
     else if (playerSelection === "rock" && computerSelection === "paper"){
-        lastGameResult.innerHTML = ("Paper beats rock! You lose!");
+        lastGameResult.innerHTML = ("You played rock and computer played paper! You lose!");
         computerScore++;
     }
     else if (playerSelection === "paper" && computerSelection === "scissors"){
-        lastGameResult.innerHTML = ("Scissors beats paper! You lose!");
+        lastGameResult.innerHTML = ("You played paper and computer played scissors! You lose!");
         computerScore++;
     }
     else if (playerSelection === "scissors" && computerSelection === "rock"){
-        lastGameResult.innerHTML = ("Rock beats scissors! You lose!");
-        computerScore++;
-    }
-    else {
-        lastGameResult.innerHTML = ("You didn't choose rock, paper, or scissors. Computer gets a point!");
+        lastGameResult.innerHTML = (`You played ${playerSelection} and computer played ${computerSelection}! You lose!`);
         computerScore++;
     }
   }
