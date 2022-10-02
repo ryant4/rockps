@@ -11,34 +11,37 @@ function getComputerChoice(){
 
 
 function playRound(playerSelection, computerSelection) {
+
+    const lastGameResult = document.querySelector("#lastgameresult");
+
     if (playerSelection === computerSelection)
-        console.log("It's a tie!");
+        lastGameResult.innerHTML = ("It's a tie!");
     else if (playerSelection === "rock" && computerSelection === "scissors"){
-        console.log("Rock beats scissors! You win!");
+        lastGameResult.innerHTML = ("Rock beats scissors! You win!");
         playerScore++;
     }
     else if (playerSelection === "paper" && computerSelection === "rock"){
-        console.log("Paper beats rock! You win!");
+        lastGameResult.innerHTML = ("Paper beats rock! You win!");
         playerScore++;
     }
     else if (playerSelection === "scissors" && computerSelection === "paper"){
-        console.log("Scissors beats paper! You win!");
+        lastGameResult.innerHTML = ("Scissors beats paper! You win!");
         playerScore++;
     }
     else if (playerSelection === "rock" && computerSelection === "paper"){
-        console.log("Paper beats rock! You lose!");
+        lastGameResult.innerHTML = ("Paper beats rock! You lose!");
         computerScore++;
     }
     else if (playerSelection === "paper" && computerSelection === "scissors"){
-        console.log("Scissors beats paper! You lose!");
+        lastGameResult.innerHTML = ("Scissors beats paper! You lose!");
         computerScore++;
     }
     else if (playerSelection === "scissors" && computerSelection === "rock"){
-        console.log("Rock beats scissors! You lose!");
+        lastGameResult.innerHTML = ("Rock beats scissors! You lose!");
         computerScore++;
     }
     else {
-        console.log("You didn't choose rock, paper, or scissors. Computer gets a point!");
+        lastGameResult.innerHTML = ("You didn't choose rock, paper, or scissors. Computer gets a point!");
         computerScore++;
     }
   }
@@ -53,6 +56,29 @@ function updateDisplayedScore(){
     
 }
 
+function checkForWinner() {
+    if (playerScore === 5) {
+        const winMsg = document.createElement('div');
+        winMsg.textContent = "You won the game!";
+        const results = document.querySelector('#results')
+        results.appendChild(winMsg);
+        const gameon = document.querySelector(".gameon");
+        gameon.style.display = "none";      
+        
+    }
+    else if (computerScore === 5) {
+        const loseMsg = document.createElement('div');
+        loseMsg.textContent = "You lost the game";
+        const results = document.querySelector('#results')
+        results.appendChild(loseMsg);
+        const gameon = document.querySelector(".gameon");
+        gameon.style.display = "none";
+    }
+    else
+        return;
+
+
+}
 
 let playerScore = 0;
 let computerScore = 0;
@@ -68,12 +94,15 @@ rockbtn.addEventListener('click', function(){
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
     updateDisplayedScore();
+    checkForWinner();
 })
 paperbtn.addEventListener('click', function(){
     let playerSelection = "paper";
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
     updateDisplayedScore();
+    checkForWinner();
+
 
 })
 scissorsbtn.addEventListener('click', function(){
@@ -81,14 +110,7 @@ scissorsbtn.addEventListener('click', function(){
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
     updateDisplayedScore();
+    checkForWinner();
+
 
 })
-
-
-// if (playerScore === computerScore)
-//     console.log("After all 5 rounds you tied!");
-// else if (playerScore > computerScore)
-//     console.log("After all 5 rounds you came out ahead!!");
-// else
-//     console.log("After all 5 rounds, the computer outdid you. SORRY!");
-
