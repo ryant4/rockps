@@ -44,17 +44,46 @@ function playRound(playerSelection, computerSelection) {
   }
 
 
+function updateDisplayedScore(){
+    const pscore = document.querySelector("#pscore");
+    const cscore = document.querySelector("#cscore");
+
+    pscore.innerHTML = "Player Score: " + playerScore;
+    cscore.innerHTML = "Computer Score: " + computerScore;
+    
+}
 
 
 let playerScore = 0;
 let computerScore = 0;
 
-// for (let i=0; i < 5; i++) {
+const rockbtn = document.querySelector('#rock-btn');
+const paperbtn = document.querySelector('#paper-btn');
+const scissorsbtn = document.querySelector('#scissors-btn');
 
-//     game();
-//     console.log(`Score:  You: ${playerScore}  Computer: ${computerScore}`);
 
-// }
+
+rockbtn.addEventListener('click', function(){
+    let playerSelection = "rock";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    updateDisplayedScore();
+})
+paperbtn.addEventListener('click', function(){
+    let playerSelection = "paper";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    updateDisplayedScore();
+
+})
+scissorsbtn.addEventListener('click', function(){
+    let playerSelection = "scissors";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    updateDisplayedScore();
+
+})
+
 
 // if (playerScore === computerScore)
 //     console.log("After all 5 rounds you tied!");
@@ -63,24 +92,3 @@ let computerScore = 0;
 // else
 //     console.log("After all 5 rounds, the computer outdid you. SORRY!");
 
-
-const rockbtn = document.querySelector('#rock-btn');
-const paperbtn = document.querySelector('#paper-btn');
-const scissorsbtn = document.querySelector('#scissors-btn');
-
-
-rockbtn.addEventListener('click', function(){
-    let playerSelection = "rock";
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-})
-paperbtn.addEventListener('click', function(){
-    let playerSelection = "paper";
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-})
-scissorsbtn.addEventListener('click', function(){
-    let playerSelection = "scissors";
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-})
