@@ -60,7 +60,9 @@ function checkForWinner() {
         const results = document.querySelector('#results')
         results.appendChild(winMsg);
         const gameon = document.querySelector(".gameon");
-        gameon.style.display = "none";      
+        gameon.style.display = "none";
+        const lastGameResult = document.querySelector("#lastgameresult");
+        lastGameResult.style.display = "none";
         
     }
     else if (computerScore === 5) {
@@ -70,6 +72,9 @@ function checkForWinner() {
         results.appendChild(loseMsg);
         const gameon = document.querySelector(".gameon");
         gameon.style.display = "none";
+        const lastGameResult = document.querySelector("#lastgameresult");
+        lastGameResult.style.display = "none";
+
     }
     else
         return;
@@ -88,14 +93,14 @@ const scissorsbtn = document.querySelector('#scissors-btn');
 
 rockbtn.addEventListener('click', function(){
     let playerSelection = "rock";
-    const computerSelection = getComputerChoice();
+    let computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
     updateDisplayedScore();
     checkForWinner();
 })
 paperbtn.addEventListener('click', function(){
     let playerSelection = "paper";
-    const computerSelection = getComputerChoice();
+    let computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
     updateDisplayedScore();
     checkForWinner();
@@ -104,7 +109,7 @@ paperbtn.addEventListener('click', function(){
 })
 scissorsbtn.addEventListener('click', function(){
     let playerSelection = "scissors";
-    const computerSelection = getComputerChoice();
+    let computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
     updateDisplayedScore();
     checkForWinner();
