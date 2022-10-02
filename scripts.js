@@ -43,12 +43,6 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-function game() {
-    let playerSelection = prompt("Choose your weapon! (rock, paper, or scissors)");
-    playerSelection = playerSelection.toLowerCase();
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-}   
 
 
 
@@ -76,11 +70,17 @@ const scissorsbtn = document.querySelector('#scissors-btn');
 
 
 rockbtn.addEventListener('click', function(){
-    console.log("rock");
+    let playerSelection = "rock";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
 })
 paperbtn.addEventListener('click', function(){
-    console.log("paper");
+    let playerSelection = "paper";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
 })
 scissorsbtn.addEventListener('click', function(){
-    console.log("scissors");
+    let playerSelection = "scissors";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
 })
